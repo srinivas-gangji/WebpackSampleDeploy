@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-const db = require('../../database/queries/db');
+import React, { Component } from "react"
+import { Link } from "react-router"
+const db = require("../../database/queries/db")
 
 class Header extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.state = { id: null };
+    this.state = { id: null }
   }
 
   componentWillMount() {
-    this.setLink();
+    this.setLink()
   }
 
   setLink() {
-    const index = _.random(0, db.length);
-    this.setState({ id: index });
+    const index = _.random(0, db.length)
+    this.setState({ id: index })
   }
 
   render() {
@@ -24,7 +24,9 @@ class Header extends Component {
         <nav>
           <div className="nav-wrapper">
             <div className="col s12">
-              <a href="#" className="brand-logo">UpStar Music</a>
+              <a href="#" className="brand-logo">
+                UpStar Music Now
+              </a>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li>
                   <Link
@@ -35,17 +37,15 @@ class Header extends Component {
                   </Link>
                 </li>
                 <li>
-                  <Link to={'/artists/new'}>
-                    Create Artist
-                  </Link>
+                  <Link to={"/artists/new"}>Create Artist</Link>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
       </div>
-    );
+    )
   }
-};
+}
 
-export default Header;
+export default Header
